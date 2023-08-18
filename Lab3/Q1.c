@@ -114,7 +114,7 @@ int main(){
     int current_time=a[0]->AT;
     struct Process *proc;
     int x=n;
-    float avg_TAT=0,avg_WT=0;\
+    float avg_TAT=0,avg_WT=0;
     float total_TAT=0,total_WT=0;
     
 
