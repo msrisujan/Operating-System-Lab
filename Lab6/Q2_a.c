@@ -47,5 +47,8 @@ int main()
     }
     printf("\n");
     *shm = -10;  //indicate that the data has been read
+
+    shmctl(shmid, IPC_RMID, NULL);
+
     exit(0);
 }
