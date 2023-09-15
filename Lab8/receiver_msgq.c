@@ -4,6 +4,9 @@
 
 // receiver.c
 
+//Name: M Sri Sujan
+//Roll: CS21B1081
+
 #include <stdio.h>
 #include <sys/ipc.h>
 #include <sys/msg.h>
