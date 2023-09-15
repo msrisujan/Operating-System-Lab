@@ -12,9 +12,9 @@
 #include <unistd.h>
 #include <sys/types.h>
 
-#define MAX_SIZE 512
+#define MAX_SIZE 512    // max size of message
 
-typedef struct {
+typedef struct {     // structure of message
     long int msg_type;
     int msg_num[MAX_SIZE];
 } my_msg;
@@ -22,23 +22,23 @@ typedef struct {
 int main() {
     int msgid;
     my_msg some_data;
-    msgid = msgget((key_t)12345, 0644 | IPC_CREAT);
+    msgid = msgget((key_t)12345, 0644 | IPC_CREAT);   // creating message queue with key 12345 and permission 0644
     if(msgid == -1){
         printf("Error in creating message queue\n");
         exit(1);
     }
 
-    long int msg_to_rec = 1;
+    some_data.msg_type = 1;     // setting message type to 1 (can be any number) using which receiver will receive the message
     int odd_count = 0;
 
-    int n = 10;
-    if(msgrcv(msgid, (void *)&some_data, MAX_SIZE, msg_to_rec , 0) == -1){
+    if(msgrcv(msgid, (void *)&some_data, MAX_SIZE, some_data.msg_type , 0) == -1){    // receiving message
             printf("Error in receiving message\n");
             exit(1);
     }
+    int n = some_data.msg_num[0];
     printf("Odd numbers: ");
-    for(int i=0; i<n; i++){
-        if(some_data.msg_num[i] % 2 != 0){
+    for(int i=1; i<=n; i++){
+        if(some_data.msg_num[i] % 2 != 0){               // checking if number is odd
             printf("%d ",some_data.msg_num[i]);
             odd_count++;
         }
