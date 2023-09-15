@@ -36,10 +36,16 @@ int main() {
             printf("Error in receiving message\n");
             exit(1);
     }
+    printf("Odd numbers: ");
     for(int i=0; i<n; i++){
-        if(some_data.msg_num[i] % 2 != 0)
+        if(some_data.msg_num[i] % 2 != 0){
+            printf("%d ",some_data.msg_num[i]);
             odd_count++;
+        }
     }
+    printf("\n");
     printf("Number of odd numbers: %d\n", odd_count);
+
+    msgctl(msgid, IPC_RMID, 0);
     return 0;
 }
