@@ -31,6 +31,7 @@ int main(){
     int fd2;
     fd2 = open(myfifo, O_WRONLY);    // opening fifo file in write only mode
     write(fd2, &B1, sizeof(B1));   // writing the number to fifo file
+    printf("B1 is one's complement of A\n");
     printf("written B1 = %d in fifo file\n", B1);  // printing the number
     close(fd2);                      // closing fifo file
 

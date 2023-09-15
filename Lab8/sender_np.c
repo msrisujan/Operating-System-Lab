@@ -35,7 +35,7 @@ int main(){
     int B1;
     fd = open(myfifo, O_RDONLY);    // opening fifo file in read only mode
     read(fd, &B1, sizeof(B1));  // reading the number from fifo file
-    printf("reading B1 from fifo file\n");
+    printf("reading B1(one's complement of A) from fifo file\n");
     printf("B1 = %d\n", B1);        // printing the number
     close(fd);                      // closing fifo file
 
