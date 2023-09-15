@@ -25,7 +25,25 @@ int main(){
     printf("reading A from fifo file\n");
     printf("A = %d\n", A);        // printing the number
     //one's complement
-    int B1 = ~A;
+    int a[32];
+    int i = 0;
+    while(A > 0){
+        a[i] = A % 2;
+        A = A / 2;
+        i++;
+    }
+    int B1 = 0;
+    int k = 1;
+    for(int j = 0; j < i; j++){
+        if(a[j] == 0){
+            a[j] = 1;
+        }
+        else{
+            a[j] = 0;
+        }
+        B1 = B1 + a[j] * k;
+        k = k * 2;
+    }
     close(fd1);                      // closing fifo file
 
     int fd2;
