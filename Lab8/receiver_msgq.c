@@ -25,7 +25,7 @@ typedef struct {     // structure of message
 int main() {
     int msgid;
     my_msg some_data;
-    msgid = msgget((key_t)12345, 0644 | IPC_CREAT);   // creating message queue with key 12345 and permission 0644
+    msgid = msgget((key_t)12345, 0644);   // creating message queue with key 12345 and permission 0644
     if(msgid == -1){
         printf("Error in creating message queue\n");
         exit(1);
