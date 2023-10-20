@@ -35,7 +35,7 @@ void *thread_A(){   // thread A
     sem_wait(&s2);   // wait
     printf("Statement A1\n");
     sem_post(&s1);     // signal
-    // sleep(1);
+    sleep(0.1);
     sem_wait(&s2);
     printf("Statement A2\n");
     sem_post(&s1);
@@ -46,7 +46,7 @@ void *thread_B(){     // thread B
     sem_wait(&s1);
     printf("Statement B1\n");
     sem_post(&s2);
-    // sleep(1);
+    sleep(0.1);
     sem_wait(&s1);
     printf("Statement B2\n");
     sem_post(&s2);
