@@ -4,6 +4,9 @@
 
 // NOTE: Use atleast five philosopher threads.
 
+//Name: M.Sri Sujan
+//Roll No: CS21bB1081
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <pthread.h>
