@@ -138,7 +138,7 @@ int main()
     while(choice){          // to take multiple inputs from user
         int flag = 0; 
         printf("0. Exit\n");
-        printf("1. Enter process number\n");
+        printf("1. To Enter process number\n");
         printf("Enter choice: ");           // 0 to exit, 1 to enter process number
         scanf("%d", &choice);
         if(choice == 0){
